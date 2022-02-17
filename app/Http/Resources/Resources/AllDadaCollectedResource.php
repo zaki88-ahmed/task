@@ -16,21 +16,13 @@ class AllDadaCollectedResource extends JsonResource
     {
 //        return parent::toArray($request);
         return [
-
-                'DataProviderX.parentAmount' => $this->parentAmount,
-                'DataProviderXcurrency' => $this->currency,
-                'DataProviderX.parentEmail' => $this->parentEmail,
-                'DataProviderX.statusCode' => $this->statusCode,
-                'DataProviderX.registerationDate' => $this->registerationDate,
-                'DataProviderX.parentIdentification' => $this->parentIdentification,
-
-
-                'DataProvidery.balance' => $this->balance,
-                'DataProvidery.currency' => $this->currency,
-                'DataProvidery.email' => $this->email,
-                'DataProvidery.status' => $this->status,
-                'DataProvidery.created_at' => $this->created_at,
-                'DataProvidery.id' => $this->id,
+            'currency' =>   $this->currency,
+            'type' =>       $this->balance ? 'Y' : 'X',
+            'balance' =>    $this->balance ? $this->balance : $this->parentAmount,
+            'email' =>      $this->email ? $this->email : $this->parentEmail,
+            'status' =>     $this->status ? $this->status : $this->statusCode,
+            'created_at' => $this->registerationDate ? $this->registerationDate : $this->created_at,
+            'id' =>         $this->id ? $this->id : $this->parentIdentification,
 
         ];
     }
