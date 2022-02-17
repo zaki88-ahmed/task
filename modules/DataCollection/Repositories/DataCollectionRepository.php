@@ -11,6 +11,7 @@ use App\Http\Traits\ApiDesignTrait;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 
+use Illuminate\Http\Resources\CollectsResources;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Validator;
